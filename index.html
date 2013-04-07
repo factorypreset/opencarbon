@@ -9,12 +9,11 @@
 
   <script type="text/javascript">
     
-    require(['backbone', 'jquery', 'jquery.flot', 'models/city', 'json!data/cities/austin.json'], function(Backbone, $, flot, City, austinData){
+    require(['backbone', 'jquery', 'jquery.flot', 'models/city'], function(Backbone, $, flot, City){
 
-        var austin = new City('austin', austinData );
+        var austin = new City('austin');
 
         austin.fetch().complete(function(){
-          console.log(austin);
           var plots = austin.plot(),
               source = austin.source();
 

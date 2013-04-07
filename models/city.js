@@ -2,10 +2,9 @@ define(['backbone', 'underscore'], function(Backbone, _){
 
   var City = Backbone.Model.extend({
     
-    initialize: function(city, cityData){
+    initialize: function(city){
       this.city = city;
-      this.cityData = cityData;
-      
+      this.cityData = {};
     },
     url: function(){
       return "/data/cities/" + this.city + ".json"
@@ -15,17 +14,16 @@ define(['backbone', 'underscore'], function(Backbone, _){
     },
     
     title: function(){
-      return this.cityData['title']
+      return this.get('title');
     },
     source: function(){
-      return this.cityData['reportingEntity']['sources'][0];
+      return this.get('reportingEntity')['sources'][0];
     },
     
     plot: function(){
-      console.log('in plot function');
       var d1 = [],
           d2 = [],
-          goals = this.cityData['reportingEntity']['goals'],
+          goals = this.get('reportingEntity')['goals'],
           mgoals = goals['municipal'],
           cgoals = goals['community'],
           mbaselineYear = mgoals['baselineYear'],
