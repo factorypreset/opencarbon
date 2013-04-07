@@ -1,0 +1,149 @@
+{
+  "title": "ExampleCity Carbon Inventory 2012",
+  "reportingPeriod": {
+    "year": "2012"
+  },
+  "reportingEntity": {
+    "name": "City of ExampleCity",
+    "goals": {
+    	"targetYear": "2020",
+    	"percentageReduction": "50"
+    },
+    "emissionSource": {
+    	"buildings": {
+    		"residential": {
+    			"scopes": {
+    				"scope-1": {
+				    	"summary": {
+				    		"numericAmount": 1000,
+				    		"unitOfMeasurement": "t CO2e"
+				    	},
+				    	"goals": {
+				    		"percentageReduction": "50"
+				    	}
+				    },
+				    "scope-2": {
+				    	"summary": {
+				    		"numericAmount": 100000,
+				    		"unitOfMeasurement": "t CO2e"
+				    	},
+				    	"goals": {
+				    		"percentageReduction": "50"
+				    	}
+				    }
+		    	}
+		    },
+		    "commercial": {
+    			"scopes": {
+    				"scope-1": {
+				    	"summary": {
+				    		"numericAmount": 100000,
+				    		"unitOfMeasurement": "t CO2e"
+				    	},
+				    	"goals": {
+				    		"percentageReduction": "50"
+				    	}
+				    },
+				    "scope-2": {
+				    	"summary": {
+				    		"numericAmount": 100000,
+				    		"unitOfMeasurement": "t CO2e"
+				    	},
+				    	"goals": {
+				    		"percentageReduction": "50"
+				    	}
+				    }
+		    	}
+		    },
+		    "industrial": {
+    			"scopes": {
+    				"scope-1": {
+				    	"summary": {
+				    		"numericAmount": 100000,
+				    		"unitOfMeasurement": "t CO2e"
+				    	},
+				    	"goals": {
+				    		"percentageReduction": "50"
+				    	}
+				    },
+				    "scope-2": {
+				    	"summary": {
+				    		"numericAmount": 100000,
+				    		"unitOfMeasurement": "t CO2e"
+				    	},
+				    	"goals": {
+				    		"percentageReduction": "50"
+				    	}
+				    }
+		    	}
+		    },
+		    "municipal": {
+    			"scopes": {
+    				"scope-1": {
+				    	"summary": {
+				    		"numericAmount": 100000,
+				    		"unitOfMeasurement": "t CO2e"
+				    	},
+				    	"goals": {
+				    		"percentageReduction": 50
+				    	},
+				    	"objects": [
+				    		{
+				    			"type": "building",
+				    			"uniqueId": "1294",
+				    			"location": {
+				    				"streetAddress": "255 Summer Street",
+				    				"cityName": "ExampleCity",
+				    				"postalCode": "99999"
+				    			},
+				    			"summary": {
+				    				"emissions": {
+				    					"numericAmount": 50,
+				    					"unitOfMeasurement": "t CO2e"
+				    				}
+				    			},
+				    			"measurements": [
+				    				{
+				    					"type": "electricity",
+				    					"provider": "NSTAR",
+				    					"measurement": {
+				    						"numericAmount": 10000,
+				    						"unitOfMeasurement": "MWh"
+				    					},
+				    					"emissions": {
+				    						"numericAmount": 50,
+				    						"unitOfMeasurement": "t CO2e"
+				    					}
+				    				},
+				    				{
+				    					"type": "naturalGas",
+				    					"provider": "National Grid",
+				    					"measurement": {
+				    						"numericAmount": 10000,
+				    						"unitOfMeasurement": "GJ"
+				    					},
+				    					"emissions": {
+				    						"numericAmount": 50,
+				    						"unitOfMeasurement": "t CO2e"
+				    					}
+				    				}
+				    			]
+				    		}
+				    	]
+				    },
+				    "scope-2": {
+				    	"summary": {
+				    		"numericAmount": 100000,
+				    		"unitOfMeasurement": "t CO2e"
+				    	},
+				    	"goals": {
+				    		"percentageReduction": "50"
+				    	}
+				    }
+		    	}
+		    }
+    	}
+    	
+    }
+  }
+}
