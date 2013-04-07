@@ -1,7 +1,7 @@
 {
-  "title": "Austin Carbon Inventory 2012",
+  "title": "Austin Carbon Inventory 2010",
   "reportingPeriod": {
-    "year": "2012"
+    "year": "2010"
   },
   "audit": {
     "validated": true,
@@ -28,7 +28,7 @@
       "municipal": {
         "baseline": {
           "year": "2007",
-          "numericAmount": 10000,
+          "numericAmount": 400000,
           "unitOfMeasurement": "tonnes CO2e"
         },
 	    	"targets": [
@@ -51,7 +51,7 @@
 	    "community": {
         "baseline": {
           "year": "2007",
-          "numericAmount": 100000,
+          "numericAmount": 12000000,
           "unitOfMeasurement": "tonnes CO2e"
         },
 	    	"targets": [
@@ -89,33 +89,50 @@
     },
     "emissionSources": {
       "municipal": {
-        "buildings": {
-          "baseline": {
-            "numericAmount": 900,
+        "baseline": {
+          "numericAmount": 400000,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
+        "total": {
+          "numericAmount": 449980,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
+        "scopes": {
+          "scope-1": {
+            "numericAmount": 187580,
             "unitOfMeasurement": "tonnes CO2e"
           },
-          "numericAmount": 1000,
-          "unitOfMeasurement": "tonnes CO2e",
-          "targets": [
-            {
-              "targetYear": "2014",
-              "scopes": {
-                "scope-1": {
-                  "percentageReduction": 20
-                }
-              }
-            },
-            {
-              "targetYear": "2020",
-              "scopes": {
-                "scope-1": {
-                  "percentageReduction": 80
-                }
-              }
-            }
-          ]
+          "scope-2": {
+            "numericAmount": 258032,
+            "unitOfMeasurement": "tonnes CO2e"
+          },
+          "other": {
+            "numericAmount": 43768,
+            "unitOfMeasurement": "tonnes CO2e"
+          }
+        }
+      },
+      "community": {
+        "baseline": {
+          "numericAmount": 12000000,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
+        "total": {
+          "numericAmount": 14926864,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
+        "scopes": {
+          "scope-1": {
+            "numericAmount": 7794880,
+            "unitOfMeasurement": "tonnes CO2e"
+          },
+          "scope-2": {
+            "numericAmount": 7131984,
+            "unitOfMeasurement": "tonnes CO2e"
+          }
         }
       }
+
     }
   }
 }

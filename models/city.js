@@ -36,19 +36,27 @@ define(['backbone', 'underscore'], function(Backbone, _){
       var d1 = [],
           d2 = [],
           d3 = [],
+          d4 = [],
           goals = this.get('reportingEntity')['goals'],
+          reportingYear = this.get('reportingPeriod')['year'],
           emissionSources = this.get('reportingEntity')['emissionSources'],
           mgoals = goals['municipal'],
           cgoals = goals['community'],
-          mbuildings = emissionSources['municipal']['buildings'],
           mbaselineYear = this.baselineYear('municipal'),
+          mbaselineAmount = this.baselineAmount('municipal'),
           mtargetYear = mbaselineYear,
+          mcurrentPosition = emissionSources['municipal']['total']['numericAmount'],
+          mcurrentPercentage = (mcurrentPosition / mbaselineAmount) * 100,
+          cbaselineAmount = this.baselineAmount('community'),
+          ccurrentPosition = emissionSources['community']['total']['numericAmount'],
+          ccurrentPercentage = (ccurrentPosition / cbaselineAmount) * 100,
           cbaselineYear = this.baselineYear('community'),
           ctargetYear = cbaselineYear; // default
       
       d1.push([mbaselineYear, 100]);
       d2.push([cbaselineYear, 100]);
-      d3.push([mbaselineYear, 100]);
+      d3.push([reportingYear, mcurrentPercentage]);
+      d4.push([reportingYear, ccurrentPercentage]);
           
       _.each(mgoals['targets'], function(target){
         targetYear = target['targetYear'];
@@ -62,16 +70,11 @@ define(['backbone', 'underscore'], function(Backbone, _){
         d2.push([targetYear, 100-targetReduction]);
       });
 
-      _.each(mbuildings['targets'], function(target){
-        targetYear = target['targetYear'];
-        targetReduction = target['scopes']['scope-1']['percentageReduction'];
-        d3.push([targetYear, 100-targetReduction]);
-      });
-      
       return [
         { data: d1, label: "Municipal aggregate emission targets (relative to baseline)" },
         { data: d2, label: "Community aggregate emission targets (relative to baseline)"},
-        { data: d3, label: "Municipal building emission targets (relative to baseline)"}
+        { data: d3, points: { show: true }, label: "Municipal results in reporting year (relative to baseline)"},
+        { data: d4, points: { show: true }, label: "Community results in reporting year (relative to baseline)"}
       ];
     },
 
@@ -79,19 +82,25 @@ define(['backbone', 'underscore'], function(Backbone, _){
       var d1 = [],
           d2 = [],
           d3 = [],
+          d4 = [],
           goals = this.get('reportingEntity')['goals'],
+          reportingYear = this.get('reportingPeriod')['year'],
           emissionSources = this.get('reportingEntity')['emissionSources'],
           mgoals = goals['municipal'],
           cgoals = goals['community'],
           mbaselineYear = this.baselineYear('municipal'),
           mbaselineAmount = this.baselineAmount('municipal'),
           mtargetYear = mbaselineYear,
+          mcurrentPosition = emissionSources['municipal']['total']['numericAmount'],
           cbaselineYear = this.baselineYear('community'),
           cbaselineAmount = this.baselineAmount('community'),
+          ccurrentPosition = emissionSources['community']['total']['numericAmount'],
           ctargetYear = cbaselineYear; // default
       
       d1.push([mbaselineYear, mbaselineAmount]);
       d2.push([cbaselineYear, cbaselineAmount]);
+      d3.push([reportingYear, mcurrentPosition]);
+      d4.push([reportingYear, ccurrentPosition]);
           
       _.each(mgoals['targets'], function(target){
         targetYear = target['targetYear'];
@@ -106,11 +115,15 @@ define(['backbone', 'underscore'], function(Backbone, _){
       });
 
       return [
-        { data: d1, label: "Municipal aggregate emission targets (in tonnes CO2e)" },
-        { data: d2, label: "Community aggregate emission targets (in tonnes CO2e)"}
+        { data: d1, lines: { show: true }, label: "Municipal aggregate emission targets (in tonnes CO2e)" },
+        { data: d2, lines: { show: true }, label: "Community aggregate emission targets (in tonnes CO2e)"},
+        { data: d3, points: { show: true }, label: "Municipal results in reporting year (in tonnes CO2e)"},
+        { data: d4, points: { show: true }, label: "Community results in reporting year (in tonnes CO2e)"}
       ];
       
-    }
+    },
+
+    
     
   });
   return City;

@@ -132,6 +132,70 @@
     },
     "emissionSources": {
       "municipal": {
+        "baseline": {
+          "numericAmount": 2000,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
+        "total": {
+          "numericAmount": 2500,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
+        "scopes": {
+          "scope-1": {
+            "numericAmount": 1500,
+            "unitOfMeasurement": "tonnes CO2e"
+          },
+          "scope-2": {
+            "numericAmount": 100,
+            "unitOfMeasurement": "tonnes CO2e"
+          }
+        },
+        "buildings": {
+          "baseline": {
+            "numericAmount": 900,
+            "unitOfMeasurement": "tonnes CO2e"
+          },
+          "numericAmount": 1000,
+          "unitOfMeasurement": "tonnes CO2e",
+          "targets": [
+            {
+              "targetYear": "2014",
+              "scopes": {
+                "scope-1": {
+                  "percentageReduction": 20
+                }
+              }
+            },
+            {
+              "targetYear": "2020",
+              "scopes": {
+                "scope-1": {
+                  "percentageReduction": 80
+                }
+              }
+            }
+          ]
+        }
+      },
+      "community": {
+        "baseline": {
+          "numericAmount": 3000,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
+        "total": {
+          "numericAmount": 3500,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
+        "scopes": {
+          "scope-1": {
+            "numericAmount": 2500,
+            "unitOfMeasurement": "tonnes CO2e"
+          },
+          "scope-2": {
+            "numericAmount": 1000,
+            "unitOfMeasurement": "tonnes CO2e"
+          }
+        },
         "buildings": {
           "baseline": {
             "numericAmount": 900,
@@ -159,6 +223,7 @@
           ]
         }
       }
+
     }
   }
 }
