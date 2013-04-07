@@ -9,18 +9,20 @@
 
   <script type="text/javascript">
     
-    require(['backbone', 'jquery', 'jquery.flot', 'models/city'], function(Backbone, $, flot, City){
+    require(['backbone', 'jquery', 'jquery.flot', 'models/city', 'collections/cities'], function(Backbone, $, flot, City, Cities){
 
-        var austin = new City('austin');
+        var cities = new Cities();
 
-        austin.fetch().complete(function(){
-          var percentagePlots = austin.plotPercentages(),
-              absolutePlots = austin.plotAbsolutes(),
-              source = austin.source(),
-              baselineYear = austin.baselineYear();
+        var city = new City('example');
 
-          $("#header h2").text(austin.title());
-          $("h3#percentage-heading").text("Emissions reduction relative to base year (" + baselineYear + ")");
+        city.fetch().complete(function(){
+          var percentagePlots = city.plotPercentages(),
+              absolutePlots = city.plotAbsolutes(),
+              source = city.source(),
+              baselineYear = city.baselineYear();
+
+          $("#header h2").text(city.title());
+          $("h3#percentage-heading").text("Emission reduction targets relative to base year (" + baselineYear + ")");
           $.plot("#percentage-placeholder", percentagePlots);
 
           $("h3#absolute-heading").text("Emissions reduction targets in tonnes CO2e");

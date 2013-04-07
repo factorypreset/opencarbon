@@ -1,149 +1,164 @@
 {
-  "title": "ExampleCity Carbon Inventory 2012",
+  "title": "Example Carbon Inventory 2012",
   "reportingPeriod": {
     "year": "2012"
   },
+  "audit": {
+    "validated": true,
+    "validatedBy": "Example Consulting LLC"
+  },
   "reportingEntity": {
-    "name": "City of ExampleCity",
-    "goals": {
-    	"targetYear": "2020",
-    	"percentageReduction": "50"
+    "name": "City of Example",
+    "sources": [
+      {
+        "title": "Example City Carbon Inventory 2012",
+        "author": "City of Example",
+        "url": "http://www.example.org/reports/carbon_inventory.pdf" 
+      }
+    ],
+    "profile": {
+        "geographicArea": 1200,
+        "geographicAreaUnits": "sq km",
+        "population": 420611,
+        "climateZone": "US Zone 5",
+        "annualHeatingDegreeDays": 2000,
+        "annualCoolingDegreeDays": 1016
     },
-    "emissionSource": {
-    	"buildings": {
-    		"residential": {
-    			"scopes": {
-    				"scope-1": {
-				    	"summary": {
-				    		"numericAmount": 1000,
-				    		"unitOfMeasurement": "t CO2e"
-				    	},
-				    	"goals": {
-				    		"percentageReduction": "50"
-				    	}
-				    },
-				    "scope-2": {
-				    	"summary": {
-				    		"numericAmount": 100000,
-				    		"unitOfMeasurement": "t CO2e"
-				    	},
-				    	"goals": {
-				    		"percentageReduction": "50"
-				    	}
-				    }
-		    	}
-		    },
-		    "commercial": {
-    			"scopes": {
-    				"scope-1": {
-				    	"summary": {
-				    		"numericAmount": 100000,
-				    		"unitOfMeasurement": "t CO2e"
-				    	},
-				    	"goals": {
-				    		"percentageReduction": "50"
-				    	}
-				    },
-				    "scope-2": {
-				    	"summary": {
-				    		"numericAmount": 100000,
-				    		"unitOfMeasurement": "t CO2e"
-				    	},
-				    	"goals": {
-				    		"percentageReduction": "50"
-				    	}
-				    }
-		    	}
-		    },
-		    "industrial": {
-    			"scopes": {
-    				"scope-1": {
-				    	"summary": {
-				    		"numericAmount": 100000,
-				    		"unitOfMeasurement": "t CO2e"
-				    	},
-				    	"goals": {
-				    		"percentageReduction": "50"
-				    	}
-				    },
-				    "scope-2": {
-				    	"summary": {
-				    		"numericAmount": 100000,
-				    		"unitOfMeasurement": "t CO2e"
-				    	},
-				    	"goals": {
-				    		"percentageReduction": "50"
-				    	}
-				    }
-		    	}
-		    },
-		    "municipal": {
-    			"scopes": {
-    				"scope-1": {
-				    	"summary": {
-				    		"numericAmount": 100000,
-				    		"unitOfMeasurement": "t CO2e"
-				    	},
-				    	"goals": {
-				    		"percentageReduction": 50
-				    	},
-				    	"objects": [
-				    		{
-				    			"type": "building",
-				    			"uniqueId": "1294",
-				    			"location": {
-				    				"streetAddress": "255 Summer Street",
-				    				"cityName": "ExampleCity",
-				    				"postalCode": "99999"
-				    			},
-				    			"summary": {
-				    				"emissions": {
-				    					"numericAmount": 50,
-				    					"unitOfMeasurement": "t CO2e"
-				    				}
-				    			},
-				    			"measurements": [
-				    				{
-				    					"type": "electricity",
-				    					"provider": "NSTAR",
-				    					"measurement": {
-				    						"numericAmount": 10000,
-				    						"unitOfMeasurement": "MWh"
-				    					},
-				    					"emissions": {
-				    						"numericAmount": 50,
-				    						"unitOfMeasurement": "t CO2e"
-				    					}
-				    				},
-				    				{
-				    					"type": "naturalGas",
-				    					"provider": "National Grid",
-				    					"measurement": {
-				    						"numericAmount": 10000,
-				    						"unitOfMeasurement": "GJ"
-				    					},
-				    					"emissions": {
-				    						"numericAmount": 50,
-				    						"unitOfMeasurement": "t CO2e"
-				    					}
-				    				}
-				    			]
-				    		}
-				    	]
-				    },
-				    "scope-2": {
-				    	"summary": {
-				    		"numericAmount": 100000,
-				    		"unitOfMeasurement": "t CO2e"
-				    	},
-				    	"goals": {
-				    		"percentageReduction": "50"
-				    	}
-				    }
-		    	}
-		    }
-    	}
-    	
+    "goals": {
+      "municipal": {
+        "baseline": {
+          "year": "1990",
+          "numericAmount": 10000,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
+        "targets": [
+          {
+            "targetYear": "2000",
+            "scopes": {
+              "scope-1": {
+                "percentageReduction": 10
+              },
+              "scope-2": {
+                "percentageReduction": 10
+              },
+              "scope-3": {
+                "percentageReduction": 0
+              }
+            }
+          },
+          {
+            "targetYear": "2010",
+            "scopes": {
+              "scope-1": {
+                "percentageReduction": 40
+              },
+              "scope-2": {
+                "percentageReduction": 40
+              },
+              "scope-3": {
+                "percentageReduction": 0
+              }
+            }
+          },
+          {
+            "targetYear": "2015",
+            "scopes": {
+              "scope-1": {
+                "percentageReduction": 90
+              },
+              "scope-2": {
+                "percentageReduction": 90
+              },
+              "scope-3": {
+                "percentageReduction": 0
+              }
+            }
+          },
+          {
+            "targetYear": "2030",
+            "scopes": {
+              "scope-1": {
+                "percentageReduction": 100
+              },
+              "scope-2": {
+                "percentageReduction": 100
+              },
+              "scope-3": {
+                "percentageReduction": 0
+              }
+            }
+          }
+
+        ]
+      },
+      "community": {
+        "baseline": {
+          "year": "1990",
+          "numericAmount": 100000,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
+        "targets": [
+          {
+            "targetYear": "2015",
+            "scopes": {
+              "scope-1": {
+                "percentageReduction": 15
+              },
+              "scope-2": {
+                "percentageReduction": 15
+              },
+              "scope-3": {
+                "percentageReduction": 0
+              }
+            }
+          },
+          {
+            "targetYear": "2030",
+            "scopes": {
+              "scope-1": {
+                "percentageReduction": 50
+              },
+              "scope-2": {
+                "percentageReduction": 50
+              },
+              "scope-3": {
+                "percentageReduction": 0
+              }
+            }
+          }
+        ]
+      }
+
+    },
+    "emissionSources": {
+      "municipal": {
+        "buildings": {
+          "baseline": {
+            "numericAmount": 900,
+            "unitOfMeasurement": "tonnes CO2e"
+          },
+          "numericAmount": 1000,
+          "unitOfMeasurement": "tonnes CO2e",
+          "targets": [
+            {
+              "targetYear": "2014",
+              "scopes": {
+                "scope-1": {
+                  "percentageReduction": 20
+                }
+              }
+            },
+            {
+              "targetYear": "2020",
+              "scopes": {
+                "scope-1": {
+                  "percentageReduction": 80
+                }
+              }
+            }
+          ]
+        }
+      }
     }
   }
 }
