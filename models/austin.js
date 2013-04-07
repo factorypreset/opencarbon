@@ -10,6 +10,9 @@ define(['backbone', 'underscore', 'json!data/austin.json'], function(Backbone, _
     title: function(){
       return austinData['title']
     },
+    source: function(){
+      return austinData['reportingEntity']['sources'][0];
+    },
     
     plot: function(){
       var d1 = [],

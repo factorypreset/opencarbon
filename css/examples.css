@@ -95,3 +95,7 @@ input[type=checkbox] {
 .legend table {
 	border-spacing: 5px;
 }
+
+.details p {
+  font-size: 9px;
+}

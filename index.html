@@ -12,11 +12,15 @@
     require(['backbone', 'jquery', 'jquery.flot', 'models/austin', 'json!data/austin.json'], function(Backbone, $, flot, Austin, data){
 
         var austin = new Austin(),
-            plots = austin.plot();
-        
+            plots = austin.plot(),
+            source = austin.source();
+
     		$("#header h2").text(austin.title());
     		$.plot("#placeholder", plots);
-    	
+
+        // TODO: this should be in a template
+        $("#details p").html('Source: <a href="' + source['url'] + '">' + source['title'] + '</a> (' + source['author'] +')');
+
     	});
     
   </script>
@@ -32,6 +36,10 @@
   		<div class="demo-container">
   			<div id="placeholder" class="demo-placeholder"></div>
   		</div>
+
+      <div class="details" id="details">
+        <p></p>
+      </div>
 
   	</div>
 
