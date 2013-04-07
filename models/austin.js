@@ -1,8 +1,8 @@
-define(['backbone', 'underscore', 'json!data/austin.json'], function(Backbone, _, austinData){
+define(['backbone', 'underscore', 'json!data/cities/austin.json'], function(Backbone, _, austinData){
 
   var Austin = Backbone.Model.extend({
     
-    url: "http://localhost:8000/json/austin.json",
+    url: "http://localhost:8000/json/cities/austin.json",
     parse: function(response){
       return response;
     },
