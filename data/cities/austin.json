@@ -25,8 +25,12 @@
         "annualCoolingDegreeDays": 3016
     },
     "goals": {
-    	"municipal": {
-	    	"baselineYear": "2007",
+      "municipal": {
+        "baseline": {
+          "year": "2007",
+          "numericAmount": 10000,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
 	    	"targets": [
 	    		{
 	    			"targetYear": "2020",
@@ -45,7 +49,11 @@
 	    	]
 	    },
 	    "community": {
-	    	"baselineYear": "2007",
+        "baseline": {
+          "year": "2007",
+          "numericAmount": 100000,
+          "unitOfMeasurement": "tonnes CO2e"
+        },
 	    	"targets": [
 	    		{
 	    			"targetYear": "2015",
@@ -78,7 +86,36 @@
 	    	]
     	}
 
-    	
+    },
+    "emissionSources": {
+      "municipal": {
+        "buildings": {
+          "baseline": {
+            "numericAmount": 900,
+            "unitOfMeasurement": "tonnes CO2e"
+          },
+          "numericAmount": 1000,
+          "unitOfMeasurement": "tonnes CO2e",
+          "targets": [
+            {
+              "targetYear": "2014",
+              "scopes": {
+                "scope-1": {
+                  "percentageReduction": 20
+                }
+              }
+            },
+            {
+              "targetYear": "2020",
+              "scopes": {
+                "scope-1": {
+                  "percentageReduction": 80
+                }
+              }
+            }
+          ]
+        }
+      }
     }
   }
 }

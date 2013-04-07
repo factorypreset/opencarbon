@@ -14,14 +14,20 @@
         var austin = new City('austin');
 
         austin.fetch().complete(function(){
-          var plots = austin.plot(),
-              source = austin.source();
+          var percentagePlots = austin.plotPercentages(),
+              absolutePlots = austin.plotAbsolutes(),
+              source = austin.source(),
+              baselineYear = austin.baselineYear();
 
           $("#header h2").text(austin.title());
-          $.plot("#placeholder", plots);
+          $("h3#percentage-heading").text("Emissions reduction relative to base year (" + baselineYear + ")");
+          $.plot("#percentage-placeholder", percentagePlots);
+
+          $("h3#absolute-heading").text("Emissions reduction targets in tonnes CO2e");
+          $.plot("#absolute-placeholder", absolutePlots);
 
           // TODO: this should be in a template
-          $("#details p").html('Source: <a href="' + source['url'] + '">' + source['title'] + '</a> (' + source['author'] +')');
+          $("#details p").html('Source: <a href="' + source['url'] + '">' + source['title'] + '</a> (' + source['author'] +') <br />Baseline year: ' + baselineYear);
         });
 
 
@@ -33,20 +39,29 @@
 <body>
   <div id="header">
     <h2>OpenCarbon Inventory</h2>
+    <h3></h3>
+  </div>
+
+  <div id="content">
+
+    <h3 id="percentage-heading"></h3>
+    <div class="demo-container">
+      <div id="percentage-placeholder" class="demo-placeholder"></div>
     </div>
 
-    <div id="content">
-
-      <div class="demo-container">
-        <div id="placeholder" class="demo-placeholder"></div>
-      </div>
-
-      <div class="details" id="details">
-        <p></p>
-      </div>
-
+    <h3 id="absolute-heading"></h3>
+    <div class="demo-container">
+      <div id="absolute-placeholder" class="demo-placeholder"></div>
     </div>
 
-    <div id="footer"></div>
+    <div class="details" id="details">
+      <p></p>
+    </div>
+
+    
+
+  </div>
+
+  <div id="footer"></div>
 </body>
 </html>
