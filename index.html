@@ -9,9 +9,12 @@
 
   <script type="text/javascript">
     
-    require(['backbone', 'jquery', 'jquery.flot', 'models/city', 'collections/cities'], function(Backbone, $, flot, City, Cities){
+    require(['backbone', 'jquery', 'jquery.flot', 'models/city', 'collections/city_list', 'views/city_chooser'], function(Backbone, $, flot, City, CityList, CityChooser){
 
-        var cities = new Cities();
+        var cityChooser = new CityChooser();
+
+
+        var cities = new CityList();
 
         var city = new City('example');
 
@@ -42,6 +45,10 @@
   <div id="header">
     <h2>OpenCarbon Inventory</h2>
     <h3></h3>
+  </div>
+
+  <div id="citychooser">
+    <ul></ul>
   </div>
 
   <div id="content">
