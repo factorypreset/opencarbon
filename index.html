@@ -9,9 +9,9 @@
 
   <script type="text/javascript">
     
-    require(['backbone', 'jquery', 'jquery.flot', 'models/austin', 'json!data/cities/austin.json'], function(Backbone, $, flot, Austin, data){
+    require(['backbone', 'jquery', 'jquery.flot', 'models/city', 'json!data/cities/austin.json'], function(Backbone, $, flot, City, austinData){
 
-        var austin = new Austin(),
+        var austin = new City('austin', austinData ),
             plots = austin.plot(),
             source = austin.source();
 

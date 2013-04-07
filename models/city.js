@@ -1,23 +1,29 @@
-define(['backbone', 'underscore', 'json!data/cities/austin.json'], function(Backbone, _, austinData){
+define(['backbone', 'underscore'], function(Backbone, _){
 
-  var Austin = Backbone.Model.extend({
+  var City = Backbone.Model.extend({
     
-    url: "http://localhost:8000/json/cities/austin.json",
+    initialize: function(city, cityData){
+      this.city = city;
+      this.cityData = cityData;
+      
+    },
+    url: "/json/cities/" + this.city + ".json",
     parse: function(response){
       return response;
     },
     
     title: function(){
-      return austinData['title']
+      return this.cityData['title']
     },
     source: function(){
-      return austinData['reportingEntity']['sources'][0];
+      return this.cityData['reportingEntity']['sources'][0];
     },
     
     plot: function(){
+      console.log('in plot function');
       var d1 = [],
           d2 = [],
-          goals = austinData['reportingEntity']['goals'],
+          goals = this.cityData['reportingEntity']['goals'],
           mgoals = goals['municipal'],
           cgoals = goals['community'],
           mbaselineYear = mgoals['baselineYear'],
@@ -47,6 +53,6 @@ define(['backbone', 'underscore', 'json!data/cities/austin.json'], function(Back
     }
     
   });
-  return Austin;
+  return City;
 
 });
