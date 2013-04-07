@@ -11,18 +11,23 @@
     
     require(['backbone', 'jquery', 'jquery.flot', 'models/city', 'json!data/cities/austin.json'], function(Backbone, $, flot, City, austinData){
 
-        var austin = new City('austin', austinData ),
-            plots = austin.plot(),
-            source = austin.source();
+        var austin = new City('austin', austinData );
 
-    		$("#header h2").text(austin.title());
-    		$.plot("#placeholder", plots);
+        austin.fetch().complete(function(){
+          console.log(austin);
+          var plots = austin.plot(),
+              source = austin.source();
 
-        // TODO: this should be in a template
-        $("#details p").html('Source: <a href="' + source['url'] + '">' + source['title'] + '</a> (' + source['author'] +')');
+          $("#header h2").text(austin.title());
+          $.plot("#placeholder", plots);
+
+          // TODO: this should be in a template
+          $("#details p").html('Source: <a href="' + source['url'] + '">' + source['title'] + '</a> (' + source['author'] +')');
+        });
+
 
       });
-    
+
   </script>
 
 </head>

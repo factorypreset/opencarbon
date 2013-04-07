@@ -7,7 +7,9 @@ define(['backbone', 'underscore'], function(Backbone, _){
       this.cityData = cityData;
       
     },
-    url: "/json/cities/" + this.city + ".json",
+    url: function(){
+      return "/data/cities/" + this.city + ".json"
+    },
     parse: function(response){
       return response;
     },
