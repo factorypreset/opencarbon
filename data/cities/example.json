@@ -17,12 +17,12 @@
       }
     ],
     "profile": {
-        "geographicArea": 1200,
-        "geographicAreaUnits": "sq km",
-        "population": 420611,
-        "climateZone": "US Zone 5",
-        "annualHeatingDegreeDays": 2000,
-        "annualCoolingDegreeDays": 1016
+      "geographicArea": 1200,
+      "geographicAreaUnits": "sq km",
+      "population": 420611,
+      "climateZone": "US Zone 5",
+      "annualHeatingDegreeDays": 2000,
+      "annualCoolingDegreeDays": 1016
     },
     "goals": {
       "municipal": {

@@ -10,19 +10,19 @@
   "reportingEntity": {
     "name": "City of Austin",
     "sources": [
-    	{
-    		"title": "CDP 2012 CDP Cities 2012 Information Request",
-    		"author": "City of Austin",
-    		"url": "http://www.austintexas.gov/sites/default/files/files/Sustainability/Climate/ProgrammeResponse_2010Final.pdf" 
-    	}
+      {
+        "title": "CDP 2012 CDP Cities 2012 Information Request",
+        "author": "City of Austin",
+        "url": "http://www.austintexas.gov/sites/default/files/files/Sustainability/Climate/ProgrammeResponse_2010Final.pdf" 
+      }
     ],
     "profile": {
-        "geographicArea": 770,
-        "geographicAreaUnits": "sq km",
-        "population": 820611,
-        "climateZone": "US Zone 5",
-        "annualHeatingDegreeDays": 1688,
-        "annualCoolingDegreeDays": 3016
+      "geographicArea": 770,
+      "geographicAreaUnits": "sq km",
+      "population": 820611,
+      "climateZone": "US Zone 5",
+      "annualHeatingDegreeDays": 1688,
+      "annualCoolingDegreeDays": 3016
     },
     "goals": {
       "municipal": {
@@ -31,60 +31,60 @@
           "numericAmount": 400000,
           "unitOfMeasurement": "tonnes CO2e"
         },
-	    	"targets": [
-	    		{
-	    			"targetYear": "2020",
-	    			"scopes": {
-	    				"scope-1": {
-	    					"percentageReduction": 100
-	    				},
-	    				"scope-2": {
-	    					"percentageReduction": 100
-	    				},
-	    				"scope-3": {
-	    					"percentageReduction": 0
-	    				}
-	    			}
-	    		}
-	    	]
-	    },
-	    "community": {
+        "targets": [
+          {
+            "targetYear": "2020",
+            "scopes": {
+              "scope-1": {
+                "percentageReduction": 100
+              },
+              "scope-2": {
+                "percentageReduction": 100
+              },
+              "scope-3": {
+                "percentageReduction": 0
+              }
+            }
+          }
+        ]
+      },
+      "community": {
         "baseline": {
           "year": "2007",
           "numericAmount": 12000000,
           "unitOfMeasurement": "tonnes CO2e"
         },
-	    	"targets": [
-	    		{
-	    			"targetYear": "2015",
-	    			"scopes": {
-	    				"scope-1": {
-	    					"percentageReduction": 15
-	    				},
-	    				"scope-2": {
-	    					"percentageReduction": 15
-	    				},
-	    				"scope-3": {
-	    					"percentageReduction": 0
-	    				}
-	    			}
-	    		},
-	    		{
-	    			"targetYear": "2030",
-	    			"scopes": {
-	    				"scope-1": {
-	    					"percentageReduction": 70
-	    				},
-	    				"scope-2": {
-	    					"percentageReduction": 70
-	    				},
-	    				"scope-3": {
-	    					"percentageReduction": 0
-	    				}
-	    			}
-	    		}
-	    	]
-    	}
+        "targets": [
+          {
+            "targetYear": "2015",
+            "scopes": {
+              "scope-1": {
+                "percentageReduction": 15
+              },
+              "scope-2": {
+                "percentageReduction": 15
+              },
+              "scope-3": {
+                "percentageReduction": 0
+              }
+            }
+          },
+          {
+            "targetYear": "2030",
+            "scopes": {
+              "scope-1": {
+                "percentageReduction": 70
+              },
+              "scope-2": {
+                "percentageReduction": 70
+              },
+              "scope-3": {
+                "percentageReduction": 0
+              }
+            }
+          }
+        ]
+      }
 
     },
     "emissionSources": {
