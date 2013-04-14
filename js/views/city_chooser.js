@@ -1,12 +1,11 @@
 define(['models/city_list_item', 'collections/city_list'], function(CityListItem, CityList){
   
-  CityChooser = Backbone.View.extend({
+  var CityChooser = Backbone.View.extend({
     
-    initialize: function(){
-      this.el = "#citychooser ul";
+    initialize: function(el){
       var that = this;
-      var cities = new CityList();
-      cities.fetch().complete(function(cities){
+      this.collection = new CityList();
+      this.collection.fetch().complete(function(cities){
         //that.el.append("<li>" + cities.get('name') + "</li>");
       });
     }

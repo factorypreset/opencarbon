@@ -9,32 +9,11 @@
 
   <script type="text/javascript">
     
-    require(['backbone', 'jquery', 'jquery.flot', 'models/city', 'collections/city_list', 'views/city_chooser'], function(Backbone, $, flot, City, CityList, CityChooser){
+    require(['backbone', 'jquery', 'jquery.flot', 'models/city', 'collections/city_list', 'views/city_chooser', 'views/city_chart'], function(Backbone, $, flot, City, CityList, CityChooser, CityChart){
 
-        var cityChooser = new CityChooser();
-
-
-        var cities = new CityList();
-
-        var city = new City('austin');
-
-        city.fetch().complete(function(){
-          var percentagePlots = city.plotPercentages(),
-              absolutePlots = city.plotAbsolutes(),
-              source = city.source(),
-              baselineYear = city.baselineYear();
-
-          $("#header h2").text(city.title());
-          $("h3#percentage-heading").text("Emission reduction targets relative to base year (" + baselineYear + ")");
-          $.plot("#percentage-placeholder", percentagePlots);
-
-          $("h3#absolute-heading").text("Emissions reduction targets in tonnes CO2e");
-          $.plot("#absolute-placeholder", absolutePlots);
-
-          // TODO: this should be in a template
-          $("#details p").html('Source: <a href="' + source['url'] + '">' + source['title'] + '</a> (' + source['author'] +') <br />Baseline year: ' + baselineYear);
-        });
-
+        // views
+        //var cityChooser = new CityChooser($('div#citychooser ul'));
+        var cityChart = new CityChart($('div#content'), 'austin');
 
       });
 
