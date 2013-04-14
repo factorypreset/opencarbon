@@ -9,10 +9,12 @@
 
   <script type="text/javascript">
     
-    require(['backbone', 'jquery', 'jquery.flot', 'models/city', 'collections/city_list', 'views/city_chooser', 'views/city_chart'], function(Backbone, $, flot, City, CityList, CityChooser, CityChart){
+    require(['backbone', 'jquery', 'jquery.flot', 'views/city_chooser', 'views/city_chart'], function(Backbone, $, flot, CityChooser, CityChart){
 
         // views
         //var cityChooser = new CityChooser($('div#citychooser ul'));
+
+        // use Austin data until we have more cities
         var cityChart = new CityChart($('div#content'), 'austin');
 
       });
